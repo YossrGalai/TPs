@@ -1,0 +1,17 @@
+<h2>Profil Utilisateur</h2>
+
+<form>
+  <label for="prenom">Prénom :</label>
+  <input id="prenom" type="text" [(ngModel)]="utilisateur.prenom" name="prenom"/>
+
+  <br /><br />
+
+  <label for="age">Âge :</label>
+  <input id="age" type="number" [(ngModel)]="utilisateur.age" name="age"/>
+
+</form>
+
+<hr />
+
+<p><strong>Prénom :</strong> {{ utilisateur.prenom }}</p>
+<p><strong>Âge :</strong> {{ utilisateur.age }}</p>

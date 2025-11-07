@@ -1,0 +1,12 @@
+<h2>{{etudiant.name}} Details</h2>
+<div><B>id: </B>{{etudiant.id}}</div>
+<div><B>name: </B>{{etudiant.name | uppercase}}</div>
+<div><b>Moyenne :</b> {{ etudiant.average | percent }}</div>
+<div><b>Prix de la formation :</b> {{ prixFormation | currency:'TND':'symbol':'1.2-2' }}</div>
+<div><b>Date d’inscription :</b> {{ dateInscription | date:'fullDate' }}</div>
+
+<div>
+    <label><b>nom: </b>
+        <input type="text" [(ngModel)]="etudiant.name" placeholder="name"/>
+    </label>
+</div>
