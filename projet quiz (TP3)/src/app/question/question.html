@@ -1,0 +1,14 @@
+<h3>{{ questionData.question }}</h3>
+    <div>
+      <button *ngFor="let opt of questionData.options"
+              (click)="onSelect(opt)"
+              [disabled]="questionData.answered">
+        {{ opt }}
+      </button>
+    </div>
+    <p *ngIf="questionData.answered">
+      Réponse choisie : {{ questionData.selected }}
+      <span *ngIf="questionData.selected === questionData.reponse">✅ Correct</span>
+      <span *ngIf="questionData.selected !== questionData.reponse">❌ Incorrect</span>
+    </p>
+    <hr>
