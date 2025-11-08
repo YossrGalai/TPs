@@ -1,0 +1,13 @@
+.disponible {
+  color: green;
+  border: 2px solid green;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.indisponible {
+  color: red;
+  border: 2px solid red;
+  padding: 10px;
+  border-radius: 8px;
+}

@@ -1,0 +1,19 @@
+<div>
+    <p>produit works!</p>
+    <img [src]="image_path" width="300"/>
+    <br>
+    <button (click)="afficherAlerte()">clicker ici</button>
+
+    <div [class.disponible]="enStock" [class.indisponible]="!enStock" [style.opacity]="enStock ? 1 : 0.5">
+        <h3>{{nom}}</h3>
+        <p *ngIf="enStock">✅ En stock</p>
+        <p *ngIf="!enStock">❌ En rupture de stock</p>
+        
+        <button (click)="basculeStock()">Changer l'état du stock</button>
+    </div>
+    <h3>{{ nomProduit }}</h3>
+    <h4>{{prix | currency:'EUR'}}</h4>
+    <button (click)="ajouterAuPanier()">Ajouter au panier</button>
+
+</div>
+

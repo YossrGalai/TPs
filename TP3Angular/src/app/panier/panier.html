@@ -1,0 +1,17 @@
+<div><h2>🛒 Mon Panier</h2>
+
+<app-produit 
+  [nomProduit]="'Chaussures'" 
+  (ajoutAuPanier)="ajouterProduit($event)">
+</app-produit>
+
+
+
+<hr>
+
+<h3>Produits ajoutés :</h3>
+<ul>
+  <li *ngFor="let p of produitsDansPanier">{{ p }}</li>
+</ul>
+
+</div>
