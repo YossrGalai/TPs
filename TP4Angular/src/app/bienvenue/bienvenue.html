@@ -1,0 +1,9 @@
+<div class="container">
+    <h2>Connexion</h2>
+
+    <input type="text" placeholder="donner mon prenom" [(ngModel)]="prenom">
+    
+    <button (click)="basculeconnecter()">clicker ici pour basculer</button>
+
+    <h3 *ngIf="isLoggedIn">Bienvenue, {{prenom}}!</h3>
+</div>

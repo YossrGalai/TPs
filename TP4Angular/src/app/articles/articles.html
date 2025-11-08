@@ -1,0 +1,33 @@
+<div class="articles-container">
+    <h2>📰 Liste des Articles</h2>
+
+    <div class="liste-articles" >
+        <div *ngFor="let article of articles" 
+            class="article"
+            [ngClass]="{
+                'important': article.importance === 'élevée',
+                'moyen': article.importance === 'moyenne',
+                'faible': article.importance === 'faible'
+            }">
+            <h3>{{ article.titre }}</h3>
+            <p>{{ article.contenu }}</p>
+            <small>Importance : {{ article.importance }}</small>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="formulaire">
+        <input type="text" placeholder="donner titre" [(ngModel)]="nouveauTitre">
+        <textarea placeholder="donner contenu" [(ngModel)]="nouveauContenu"></textarea>
+
+        <select [(ngModel)]="nouvelleImportance">
+            <option value="faible">Faible</option>
+            <option value="moyenne">Moyenne</option>
+            <option value="élevée">Élevée</option>
+        </select>
+
+        <button (click)="ajouterArticle()">Ajouter un article</button>
+    </div>
+
+</div>

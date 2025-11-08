@@ -1,0 +1,51 @@
+.produits-container {
+  width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  font-family: 'Poppins', sans-serif;
+}
+
+.produit {
+  background: white;
+  border-left: 4px solid #ccc;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  padding: 15px;
+  transition: 0.3s;
+}
+
+.produit:hover {
+  transform: scale(1.02);
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.actions button {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+  transition: 0.3s;
+}
+
+.actions button:first-child {
+  background: #4caf50;
+}
+
+.actions button:last-child {
+  background: #f44336;
+}
+
+.actions button:hover {
+  opacity: 0.85;
+}

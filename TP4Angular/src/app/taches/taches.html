@@ -1,0 +1,34 @@
+<div class="taches-container">
+  <h2>📝 Liste des tâches</h2>
+
+  <input type="text" [(ngModel)]="nouvelleDescription" placeholder="Nouvelle tâche...">
+  <select [(ngModel)]="nouvellePriorite">
+    <option value="haute">Haute</option>
+    <option value="moyenne">Moyenne</option>
+    <option value="basse">Basse</option>
+  </select>
+  <button (click)="ajouterTache()">Ajouter</button>
+
+  <hr>
+
+  <div *ngIf="taches.length > 0; else pasDeTaches">
+    <ul>
+      <li *ngFor="let tache of taches"
+          [ngClass]="{'completee': tache.statut}"
+          [ngStyle]="{'color': 
+            tache.priorite === 'haute' ? 'red' :
+            tache.priorite === 'moyenne' ? 'orange' : 'green'
+          }">
+
+        {{ tache.description }} (Priorité : {{ tache.priorite }})
+        <button (click)="basculerStatut(tache)">
+          {{ tache.statut ? 'Marquer comme non terminée' : 'Marquer comme terminée' }}
+        </button>
+      </li>
+    </ul>
+  </div>
+
+  <ng-template #pasDeTaches>
+    <p class="vide">Vous n'avez pas de tâches en cours 😴</p>
+  </ng-template>
+</div>

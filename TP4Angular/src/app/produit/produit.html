@@ -1,0 +1,19 @@
+<div class="produits-container">
+  <h2>🛒 Liste des Produits</h2>
+
+  <div *ngFor="let p of produits" class="produit">
+    <h3>{{ p.nom }}</h3>
+
+    <p>
+      Stock :
+      <span [ngStyle]="{ 'color': getCouleur(p.stock), 'font-weight': 'bold' }">
+        {{ p.stock }}
+      </span>
+    </p>
+
+    <div class="actions">
+      <button (click)="augmenterStock(p)">➕ Ajouter</button>
+      <button (click)="diminuerStock(p)">➖ Retirer</button>
+    </div>
+  </div>
+</div>
