@@ -1,0 +1,17 @@
+<app-book-list [livres]="filteredBooks()" 
+                (deleteBookEvent)="deleteBook($event)" 
+                (edit)="onEditReceived($event)"></app-book-list>
+
+<app-book-form [book]="selectedBook"
+                [isEditing]="isEditing"
+                (submitBook)="onFormSubmit($event)"></app-book-form>
+
+                <input type="text" placeholder="Rechercher..." [(ngModel)]="search"/>
+
+<select [(ngModel)]="sortOption">
+  <option value="">-- Aucun tri --</option>
+  <option value="category">Trier par catégorie</option>
+  <option value="available">Trier par disponibilité</option>
+</select>
+
+<p>Total livres : {{ livres.length }}</p>

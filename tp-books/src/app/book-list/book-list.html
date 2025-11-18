@@ -1,0 +1,26 @@
+<div>
+    <table>
+         <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Category</th>
+            <th>Disponible</th>
+            <th>Actions</th>
+        </tr>
+
+        @for (book of livres; track book.id) {
+            <tr>
+                <td>{{ book.title }}</td>
+                <td>{{ book.author }}</td>
+                <td>{{ book.category }}</td>
+                <td>
+                    {{ book.isAvailable ? "Oui" : "Non" }}
+                </td>
+                <td>
+                    <button (click)="onEditBook(book)">Modifier</button>
+                    <button (click)="supprimer(book.id)">Supprimer</button>
+                </td>
+            </tr>
+        }
+    </table>
+</div>
